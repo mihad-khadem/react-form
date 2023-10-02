@@ -60,3 +60,62 @@ components react will give access to the most basic web API, so you will be able
 develop anything.
 
 # How to create a Custom Hook
+Creating a custom hook in a React application is a great way to encapsulate reusable logic that can be shared across multiple components. Custom hooks are functions that follow the naming convention useSomething, and they can access React's built-in hooks or other custom hooks. Here's a step-by-step guide on how to create a custom hook:
+
+1. Create a New JavaScript File: Start by creating a new JavaScript file (e.g., useCustomHook.js) in your project's directory.
+2. Import React and Necessary Hooks: In your custom hook file, import React and any built-in hooks you need, such as useState, useEffect, or useContext. You can also import other custom hooks if required.
+3. Define Your Custom Hook Function: Create your custom hook function. Make sure it follows the useSomething naming convention. The function should encapsulate some reusable logic and return any values, state, or functions that other components might need.
+function useCustomHook(initialValue) {
+  const [value, setValue] = useState(initialValue);
+
+  useEffect(() => {
+    // Your custom logic goes here
+  }, [value]);
+
+  const updateValue = (newValue) => {
+    setValue(newValue);
+  };
+
+  return { value, updateValue };
+}
+
+export default useCustomHook;
+
+In this example, the custom hook 'useCustomHook' manages a state variable and provides a function to update it.
+4. Using the Custom Hook in Components: You can now use your custom hook in any component that needs the encapsulated logic. Import the custom hook and call it within your component.
+import React from 'react';
+import useCustomHook from './useCustomHook';
+
+function MyComponent() {
+  const { value, updateValue } = useCustomHook('initialValue');
+
+  return (
+    <div>
+      <p>Value: {value}</p>
+      <button onClick={() => updateValue('new value')}>Update Value</button>
+    </div>
+  );
+}
+
+export default MyComponent;
+This component uses the useCustomHook to manage a value and provide a way to update it.
+5. Use Custom Hook in Other Components: You can use the same custom hook in other components as well. Just import it and call it as needed.
+
+import React from 'react';
+import useCustomHook from './useCustomHook';
+
+function AnotherComponent() {
+  const { value, updateValue } = useCustomHook('another initial value');
+
+  return (
+    <div>
+      <p>Another Value: {value}</p>
+      <button onClick={() => updateValue('new value for another')}>Update Another Value</button>
+    </div>
+  );
+}
+
+export default AnotherComponent;
+That's it! You've created a custom hook and used it in multiple components. Custom hooks are an excellent way to keep your code organized and promote reusability of logic in your React application.
+
+# Reusable Component 
