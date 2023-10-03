@@ -1,4 +1,5 @@
 import './App.css'
+import Grandpa from './components/Grandpa/Grandpa'
 // import HookForm from './components/hookForm/HookForm'
 // import ReUsable from './components/reUsableForm/ReUsable'
 // import RefForm from './components/ref-form/RefForm'
@@ -38,6 +39,7 @@ function App() {
           <p>Always keep your profile updated</p>
         </div>
       </ReUsable> */}
+      <Grandpa></Grandpa>
     </>
   )
 }

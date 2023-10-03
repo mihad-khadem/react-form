@@ -118,4 +118,20 @@ function AnotherComponent() {
 export default AnotherComponent;
 That's it! You've created a custom hook and used it in multiple components. Custom hooks are an excellent way to keep your code organized and promote reusability of logic in your React application.
 
-# Reusable Component 
+# Reusable Component
+
+
+
+# Context API
+How to create a context API ->
+ 1. Create a Context and export.
+ 2. Add provider for the context with a value.(Value could be anything)
+ 3. useContext to access the value of context API
+
+ Use Case ->
+ Passing data deeply into the tree
+ Updating data passed via context’
+ Specifying a fallback default value
+ Overriding context for a part of the tree
+ Optimizing re-renders when passing objects and functions
+
